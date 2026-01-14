@@ -1,4 +1,41 @@
-title: "Hyunje Lee"
-description: "Backend Engineer Portfolio"
-theme: minima
+# Site settings
+title: LEE-HYUN-JE
+description: "Backend Engineer | Technical Blog"
+baseurl: ""
+url: "https://lee-hyun-je.github.io"
 
+# Author
+author:
+  name: Hyunje Lee
+  email: your-email@example.com
+  github: LEE-HYUN-JE
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:year/:month/:day/:title/
+
+# Pagination
+paginate: 6
+paginate_path: "/posts/page/:num/"
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Hyunje Lee"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules

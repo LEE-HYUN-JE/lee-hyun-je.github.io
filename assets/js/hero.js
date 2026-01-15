@@ -1,8 +1,9 @@
 (() => {
   const words = [
     "기술을 도구로 활용하는",
-    "협업과 성장을 사랑하는",
-    "도메인을 구분 짓지 않는"
+    "협업을 사랑하는",
+    "문제를 끝까지 해결하는",
+    "도메인을 빠르게 학습하는"
   ];
 
   const el = document.getElementById("rotatingWord");
@@ -12,10 +13,10 @@
   let charIdx = 0;
   let isDeleting = false;
 
-  const typingSpeed = 65;
-  const deletingSpeed = 35;
-  const pauseAfterTyping = 1200;
-  const pauseAfterDeleting = 300;
+  const typingSpeed = 90;
+  const deletingSpeed = 55;
+  const pauseAfterTyping = 1600;
+  const pauseAfterDeleting = 400;
 
   function tick() {
     const current = words[wordIdx];

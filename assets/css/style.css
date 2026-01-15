@@ -991,54 +991,78 @@ img {
   overflow: hidden;
 }
 
-/* ===== Hero Section (New) ===== */
+/* ===== Hero Section (minseoky style) ===== */
 .hero {
-  max-width: 900px;
+  max-width: 760px;
   margin: 0 auto;
-  padding: 80px 24px 60px;
+  padding: 90px 20px 50px;
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-columns: 280px 1fr;
   gap: 40px;
   align-items: center;
   background: transparent;
-  text-align: left;
 }
 
 .hero-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-photo {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: var(--shadow-md);
+}
+
+.hero-right {
   display: flex;
   flex-direction: column;
 }
 
 .hero-hello {
-  font-size: 2rem;
-  font-weight: 300;
-  margin: 0 0 12px;
+  font-size: 38px;
+  font-weight: 200;
+  margin: 0;
   color: var(--color-text);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.hero-typing {
+  font-size: 38px;
+  font-weight: 200;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.hero-typing .quote {
+  opacity: 0.5;
 }
 
 .hero-title {
   margin: 0;
-  font-size: 2.25rem;
-  font-weight: 300;
-  line-height: 1.25;
+  font-size: 38px;
+  font-weight: 200;
+  line-height: 1.2;
   color: var(--color-text);
-  word-break: keep-all;
+  letter-spacing: -0.5px;
 }
 
 .hero-title strong {
   font-weight: 800;
 }
 
-.hero-title .rotating-text {
-  color: var(--color-accent);
-  font-weight: 600;
-}
-
 .cursor {
   display: inline-block;
-  color: var(--color-accent);
-  animation: blink 0.8s infinite;
-  font-weight: 400;
+  color: var(--color-text);
+  opacity: 0.6;
+  animation: blink 0.85s infinite;
+  font-weight: 300;
+  margin-left: 1px;
 }
 
 @keyframes blink {
@@ -1046,98 +1070,90 @@ img {
   50% { opacity: 1; }
 }
 
-.hero-desc {
-  margin-top: 20px;
-  font-size: 0.938rem;
-  line-height: 1.8;
-  color: var(--color-text-secondary);
-  word-break: keep-all;
-}
-
 .hero-links {
   display: flex;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
-.icon-btn {
-  display: inline-flex;
+.icon-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 10px 16px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  background: var(--color-bg);
-  text-decoration: none;
-  color: var(--color-text);
-  font-weight: 600;
-  font-size: 0.875rem;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   transition: all var(--transition);
 }
 
-.icon-btn:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  background: var(--color-bg-secondary);
+.icon-link:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
-.icon-btn svg {
-  width: 18px;
-  height: 18px;
+.icon-link .icon {
+  width: 20px;
+  height: 20px;
+  fill: rgba(0, 0, 0, 0.6);
 }
 
-.hero-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.icon-link:hover .icon {
+  fill: rgba(0, 0, 0, 0.8);
 }
 
-.hero-photo-placeholder {
-  width: 240px;
-  height: 240px;
-  border-radius: var(--radius-lg);
-  border: 2px dashed var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: var(--color-text-secondary);
-  opacity: 0.5;
-}
-
-.hero-photo {
-  width: 240px;
-  height: 240px;
-  border-radius: var(--radius-lg);
-  object-fit: cover;
-  box-shadow: var(--shadow-md);
+.hero-desc {
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--color-text);
+  opacity: 0.65;
+  word-break: keep-all;
 }
 
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
-    padding: 60px 24px 40px;
+    padding: 60px 20px 40px;
     text-align: center;
+    gap: 30px;
   }
 
   .hero-left {
-    align-items: center;
+    order: -1;
+  }
+
+  .hero-photo {
+    width: 200px;
+    height: 200px;
   }
 
   .hero-right {
-    display: none;
+    align-items: center;
   }
 
   .hero-hello {
-    font-size: 1.5rem;
+    font-size: 28px;
   }
 
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 30px;
+  }
+
+  .hero-typing {
+    font-size: 20px;
   }
 
   .hero-links {
     justify-content: center;
   }
+}
+
+/* ===== Comments Section ===== */
+.comments {
+  padding: 60px 0;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
 }

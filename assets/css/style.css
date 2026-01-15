@@ -308,48 +308,43 @@ img {
 
 .hero-hello {
   margin: 0;
-  font-size: 48px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.08;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
   color: var(--fg);
 }
 
 .hero-typing {
-  margin-top: var(--s12);
-  font-size: 48px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.08;
-  color: var(--fg);
-}
-
-.hero-typing .quote {
-  color: var(--muted2);
+  margin-top: var(--s8);
+  font-size: 28px;
   font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  color: var(--muted);
 }
 
 .hero-title {
-  margin-top: var(--s12);
-  font-size: 48px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.08;
+  margin-top: var(--s8);
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
   color: var(--fg);
 }
 
 .hero-title strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .cursor {
   display: inline-block;
-  width: 2px;
-  height: 0.9em;
-  background: var(--fg);
-  margin-left: 2px;
-  animation: blink 0.9s infinite;
-  vertical-align: middle;
+  width: 1px;
+  height: 1em;
+  background: var(--muted);
+  margin-left: 1px;
+  animation: blink 1s infinite;
+  vertical-align: text-bottom;
 }
 
 @keyframes blink {

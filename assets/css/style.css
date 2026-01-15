@@ -664,6 +664,48 @@ img {
   border-radius: var(--radius-sm);
 }
 
+/* Figure & Caption */
+.post-content figure {
+  margin: var(--s24) 0;
+}
+
+.post-content figure img {
+  margin: 0;
+}
+
+.post-content figcaption {
+  margin-top: var(--s8);
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Details/Summary */
+.post-content details {
+  margin: var(--s24) 0;
+  padding: var(--s16);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.post-content summary {
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--fg);
+}
+
+.post-content details[open] summary {
+  margin-bottom: var(--s16);
+  padding-bottom: var(--s12);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Checklist */
+.post-content ul li input[type="checkbox"] {
+  margin-right: var(--s8);
+}
+
 .post-content a {
   color: var(--accent);
   text-decoration: underline;

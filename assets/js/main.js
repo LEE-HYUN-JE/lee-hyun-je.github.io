@@ -72,14 +72,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (results.length > 0) {
         searchResults.innerHTML = results.map(item => `
-          <a href="${item.url}" class="search-result-item">
-            <div class="search-result-title">${item.title}</div>
-            <div class="search-result-excerpt">${item.excerpt}</div>
+          <a href="${item.url}" class="search-item">
+            <div class="title">${item.title}</div>
+            <div class="excerpt">${item.excerpt}</div>
           </a>
         `).join('');
         searchResults.classList.add('active');
       } else {
-        searchResults.innerHTML = '<div class="search-result-item"><div class="search-result-title">No results found</div></div>';
+        searchResults.innerHTML = '<div class="search-item"><div class="title">검색 결과가 없습니다</div></div>';
         searchResults.classList.add('active');
       }
     });

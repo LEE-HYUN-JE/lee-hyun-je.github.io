@@ -2,12 +2,11 @@
 layout: post
 title: "JPA N+1 문제 해결 전략"
 date: 2024-01-10
-category: JPA
-tags: [JPA, Performance, Database]
-excerpt: "JPA를 사용할 때 발생하는 N+1 문제의 원인과 다양한 해결 방법을 정리했습니다."
+tags: [Backend]
 ---
 
 JPA를 사용하면서 가장 흔하게 마주치는 성능 이슈 중 하나가 N+1 문제입니다.
+<!--more-->
 
 ## N+1 문제란?
 

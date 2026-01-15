@@ -4,6 +4,18 @@ description: "Backend Engineer | Technical Blog"
 baseurl: ""
 url: "https://lee-hyun-je.github.io"
 
+# excerpt(미리보기) 기준
+excerpt_separator: "<!--more-->"
+
+# 고정 태그 목록 (탭에 노출)
+portfolio_tags:
+  - Devops
+  - Backend
+  - Etc
+  - ComputerScience
+  - AWS
+  - Secure
+
 # Author
 author:
   name: Hyunje Lee

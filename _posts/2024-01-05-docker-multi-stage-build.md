@@ -2,12 +2,11 @@
 layout: post
 title: "Docker Multi-stage Build로 이미지 최적화하기"
 date: 2024-01-05
-category: DevOps
-tags: [Docker, DevOps, Optimization]
-excerpt: "Docker 멀티 스테이지 빌드를 활용하여 프로덕션 이미지 크기를 줄이는 방법을 공유합니다."
+tags: [Devops]
 ---
 
 Spring Boot 애플리케이션의 Docker 이미지가 너무 커서 배포 시간이 오래 걸리는 문제를 해결했습니다.
+<!--more-->
 
 ## 기존 Dockerfile의 문제점
 

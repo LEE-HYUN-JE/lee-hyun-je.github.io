@@ -2,12 +2,11 @@
 layout: post
 title: "Spring Transaction Propagation 이해하기"
 date: 2024-01-14
-category: Spring
-tags: [Spring, Transaction, JPA]
-excerpt: "Spring에서 트랜잭션 전파 속성을 어떻게 활용하는지 실제 사례와 함께 정리했습니다."
+tags: [Backend]
 ---
 
 Spring에서 `@Transactional` 어노테이션을 사용할 때, 트랜잭션 전파(Propagation) 속성을 제대로 이해하지 못하면 예상치 못한 버그가 발생할 수 있습니다.
+<!--more-->
 
 ## 문제 상황
 

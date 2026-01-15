@@ -781,3 +781,143 @@ img {
 .highlight pre {
   margin: 0;
 }
+
+/* ===== Posts Page (New Tag System) ===== */
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.posts-header {
+  margin-bottom: 24px;
+}
+
+.posts-title {
+  font-size: 28px;
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+
+.posts-desc {
+  color: var(--color-text-secondary);
+  margin-bottom: 18px;
+}
+
+.tag-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tag-tab {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.3px;
+  font-family: var(--font-sans);
+  color: var(--color-text-secondary);
+  transition: all var(--transition);
+}
+
+.tag-tab:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.tag-tab.is-active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: var(--color-bg-secondary);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.post-card .date {
+  opacity: 0.6;
+  font-weight: 600;
+  font-size: 0.813rem;
+  white-space: nowrap;
+}
+
+.post-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.post-link:hover .post-card-title {
+  color: var(--color-accent);
+}
+
+.post-card-title {
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+  font-weight: 700;
+  transition: color var(--transition);
+}
+
+.post-card-excerpt {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  font-size: 0.938rem;
+}
+
+.more-btn {
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  padding: 12px 32px;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.938rem;
+  font-family: var(--font-sans);
+  letter-spacing: 0.5px;
+  transition: all var(--transition);
+}
+
+.more-btn:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--color-text-secondary);
+}

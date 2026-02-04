@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SAGA 패턴으로 분산 트랜잭션 문제 해결하기 - OpenStack + Spring Boot"
+title: "모놀리식 아키텍쳐 내에서 SAGA 패턴으로 분산 트랜잭션 문제 해결하기 - OpenStack + Spring Boot"
 date: 2025-01-31
 tags: [Backend, ComputerScience]
 ---
@@ -38,7 +38,7 @@ public void createUser(UserRequest request) {
 서로 다른 시스템에 데이터를 저장해야 하는 경우, 단일 트랜잭션으로 묶을 수 없다.
 </br> 아래는 현재 진행하는 BFF 구조인 ACC Server 가 처한 문제상황이다.
 
-![분산 트랜잭션 처리 미흡](assets/images/2025-02-02/acc-distribute-transcation-problem.png)  
+![분산 트랜잭션 처리 미흡](/assets/images/2025-02-02/acc-distribute-transcation-problem.png)  
 Keystone의 사용자 생성을 "롤백"하려면 별도의 **보상 트랜잭션**이 필요하다.
 
 
@@ -82,13 +82,13 @@ SAGA 패턴은 두 가지 방식으로 구현할 수 있다.
 
 각 서비스가 이벤트를 발행/구독하며 자율적으로 다음 단계를 실행한다.
 #### chroeography-성공케이스
-![chroeography-성공케이스](assets/images/2025-02-02/img.png)
+![chroeography-성공케이스](/assets/images/2025-02-02/img.png)
 Service 1의 설정에 따라 다르지만, 대부분은 모든 Service 컴포넌트들의 트랜잭션 성공 event 응답을 받게 되면, 
 다음 로직을 진행하게 되는 원리이다.
 
 
 #### chroeography-실패케이스
-![chroeography-실패케이스](assets/images/2025-02-02/img_1.png)
+![chroeography-실패케이스](/assets/images/2025-02-02/img_1.png)
 만약, 한 Service에서 트랜잭션에 실패하여 실패이벤트를 발행하게 된다면, 각 해당하는 Service들은 모두 Rollback을 실행해 
 데이터의 정합성을 맞출 수 있다. 
 
@@ -106,13 +106,13 @@ Service 1의 설정에 따라 다르지만, 대부분은 모든 Service 컴포�
 중앙 조율자가 전체 흐름을 제어한다.
 <br/> 
 #### Orchestration-성공케이스
-![Orchestration-성공케이스](assets/images/2025-02-02/img_2.png)
+![Orchestration-성공케이스](/assets/images/2025-02-02/img_2.png)
 해당 패턴은 SAGA Orchestrator 즉, 조율자가 Service의 인스턴스로 올라와 모든 흐름을 제어하게 되는 것이다.
 <br/> Saga Orchestrator가 트랜잭션의 결과를 직접 응답받아 정의된 다음 트랜잭션들을 순차적으로 실행하여 로직의 정합성을 맞춰나간다.
 
 
 #### Orchestration-실패케이스
-![Orchestration-실패케이스](assets/images/2025-02-02/img_3.png)
+![Orchestration-실패케이스](/assets/images/2025-02-02/img_3.png)
 만약, Saga Orchestrator에 실패응답이 돌아왔을 시 , Saga Orchestrator의 인스턴스에 정의된 순차 실행되었던 트랜잭션의 역순으로 보상트랜잭션이 실행된다.
 
 
@@ -372,7 +372,7 @@ public class ProjectModule {
 | 문제 | 외부 API + DB 저장에서 정합성 불일치 |
 | 해결 | SAGA 패턴 (Orchestration)  |
 | 구현 | try-catch + 보상 로직        |
-| 이유 | Step 2개, 단순한 비즈니스 로직      |
+| 이유 | Step 2개, 단순한 비즈니스 로직     |
 
 ### SAGA 적용 기준
 
